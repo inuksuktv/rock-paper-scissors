@@ -37,7 +37,7 @@ function playRound(humanChoice, computerChoice) {
             console.log("You lose. Paper beats rock.");
             computerScore++;
         }
-        else if (computerChoice == "scissors") {
+        else if (computerChoice === "scissors") {
             console.log("You win! Rock beats scissors.");
             humanScore++;
         }
@@ -50,7 +50,7 @@ function playRound(humanChoice, computerChoice) {
         else if (computerChoice === "paper") {
             console.log("It's a tie. Paper against paper.");
         }
-        else if (computerChoice == "scissors") {
+        else if (computerChoice === "scissors") {
             console.log("You lose. Scissors beat paper.");
             computerScore++;
         }
@@ -64,15 +64,32 @@ function playRound(humanChoice, computerChoice) {
             console.log("You win! Scissors beat paper.");
             humanScore++;
         }
-        else if (computerChoice == "scissors") {
+        else if (computerChoice === "scissors") {
             console.log("It's a tie. Scissors against scissors.");
         }
     }
 }
 
+function playGame() {
+    for (i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+    }
+
+    console.log(`After five rounds, the score is ${humanScore} to ${computerScore}.`)
+
+    if (humanScore > computerScore) {
+        console.log("You win!");
+    }
+    else if (computerScore > humanScore) {
+        console.log("You lose!");
+    }
+    else console.log("The score is tied.");
+}
+
 let humanScore = 0;
 let computerScore = 0;
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+playGame();
