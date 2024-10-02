@@ -89,7 +89,25 @@ function playGame() {
     else console.log("The score is tied.");
 }
 
+function rockClick() {
+    console.log("Clicked rock.");
+}
+
+function paperClick() {
+    console.log("Clicked paper.");
+}
+
+function scissorsClick() {
+    console.log("Clicked scissors.");
+}
+
 let humanScore = 0;
 let computerScore = 0;
 
-playGame();
+const rockButton = document.getElementById("rockButton");
+rockButton.addEventListener('click', rockClick);
+const paperButton = document.getElementById('paperButton');
+paperButton.addEventListener('click', paperClick);
+const scissorsButton = document.getElementById('scissorsButton');
+scissorsButton.addEventListener('click', scissorsClick);
+
