@@ -12,41 +12,41 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "rock") {
-            console.log("It's a tie. Rock against rock.");
+            messageElement.textContent = "It's a tie. Rock against rock.";
         }
         else if (computerChoice === "paper") {
-            console.log("You lose. Paper beats rock.");
+            messageElement.textContent = "You lose. Paper beats rock.";
             computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
         }
         else if (computerChoice === "scissors") {
-            console.log("You win! Rock beats scissors.");
+            messageElement.textContent = "You win! Rock beats scissors.";
             humanScoreElement.textContent = parseInt(humanScoreElement.textContent) + 1;
         }
     }
     else if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            console.log("You win! Paper beats rock.");
+            messageElement.textContent = "You win! Paper beats rock.";
             humanScoreElement.textContent = parseInt(humanScoreElement.textContent) + 1;
         }
         else if (computerChoice === "paper") {
-            console.log("It's a tie. Paper against paper.");
+            messageElement.textContent = "It's a tie. Paper against paper.";
         }
         else if (computerChoice === "scissors") {
-            console.log("You lose. Scissors beat paper.");
+            messageElement.textContent = "You lose. Scissors beat paper.";
             computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
         }
     }
     else if (humanChoice === "scissors") {
         if (computerChoice === "rock") {
-            console.log("You lose! Rock beats paper.");
+            messageElement.textContent = "You lose! Rock beats paper.";
             computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
         }
         else if (computerChoice === "paper") {
-            console.log("You win! Scissors beat paper.");
+            messageElement.textContent = "You win! Scissors beat paper.";
             humanScoreElement.textContent = parseInt(humanScoreElement.textContent) + 1;
         }
         else if (computerChoice === "scissors") {
-            console.log("It's a tie. Scissors against scissors.");
+            messageElement.textContent = "It's a tie. Scissors against scissors.";
         }
     }
 }
@@ -65,6 +65,7 @@ function scissorsClick() {
 
 const humanScoreElement = document.querySelector('div[player] div[score]');
 const computerScoreElement = document.querySelector('div[computer] div[score]');
+const messageElement = document.querySelector('div[message]');
 
 const rockButton = document.getElementById("rockButton");
 rockButton.addEventListener('click', rockClick);
