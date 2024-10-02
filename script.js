@@ -38,7 +38,7 @@ function playRound(humanChoice, computerChoice) {
     }
     else if (humanChoice === "scissors") {
         if (computerChoice === "rock") {
-            messageElement.textContent = "You lose! Rock beats paper.";
+            messageElement.textContent = "You lose! Rock beats scissors.";
             computerScoreElement.textContent = parseInt(computerScoreElement.textContent) + 1;
         }
         else if (computerChoice === "paper") {
@@ -48,6 +48,13 @@ function playRound(humanChoice, computerChoice) {
         else if (computerChoice === "scissors") {
             messageElement.textContent = "It's a tie. Scissors against scissors.";
         }
+    }
+
+    if (parseInt(humanScoreElement.textContent) === 5) {
+        messageElement.textContent = "You win the game!"
+    }
+    if (parseInt(computerScoreElement.textContent) === 5) {
+        messageElement.textContent = "Game over! The computer wins."
     }
 }
 
